@@ -1,0 +1,26 @@
+{
+  "name": "aixieluo/laravels-rpc-server",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "aixieluo",
+      "email": "admin@aixieluo.com"
+    }
+  ],
+  "require": {
+    "hhxsv5/laravel-s": "^3.7",
+    "illuminate/support": "^8.16",
+    "illuminate/validation": "^8.16",
+    "illuminate/http": "^8.16",
+    "ext-json": "*",
+    "illuminate/container": "^8.16"
+  },
+  "autoload": {
+    "psr-4": {
+      "Aixieluo\\Rpc\\": "src"
+    },
+    "files": [
+      "src/helpers.php"
+    ]
+  }
+}
