@@ -9,11 +9,11 @@
   ],
   "require": {
     "hhxsv5/laravel-s": "^3.7",
-    "illuminate/support": "^8.16",
-    "illuminate/validation": "^8.16",
-    "illuminate/http": "^8.16",
+    "illuminate/support": "^6.0|^7.0|^8.0",
+    "illuminate/validation": "^6.0|^7.0|^8.0",
+    "illuminate/http": "^6.0|^7.0|^8.0",
     "ext-json": "*",
-    "illuminate/container": "^8.16"
+    "illuminate/container": "^6.0|^7.0|^8.0"
   },
   "autoload": {
     "psr-4": {
