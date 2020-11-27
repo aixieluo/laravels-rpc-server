@@ -4,7 +4,7 @@ namespace Aixieluo\Rpc\Server;
 
 use Hhxsv5\LaravelS\Swoole\Socket\TcpInterface;
 use Hhxsv5\LaravelS\Swoole\Socket\TcpSocket as Tcp;
-use Illuminate\Http\Request;
+use Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
