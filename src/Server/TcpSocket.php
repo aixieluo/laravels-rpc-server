@@ -4,6 +4,7 @@ namespace Aixieluo\Rpc\Server;
 
 use Hhxsv5\LaravelS\Swoole\Socket\TcpInterface;
 use Hhxsv5\LaravelS\Swoole\Socket\TcpSocket as Tcp;
+use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
@@ -41,7 +42,7 @@ class TcpSocket extends Tcp implements TcpInterface
                     'msg'  => 'Not Found Method',
                 ]));
             }
-            $data = app($class)->{$protocol['method']}(\Request::merge($protocol['params']));
+            $data = app($class)->{$protocol['method']}(Request::capture()->merge($protocol['params']));
             if ($data instanceof JsonResource) {
                 $data = $data->response()->getData(true);
             }
