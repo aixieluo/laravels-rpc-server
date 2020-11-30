@@ -24,24 +24,12 @@ if (! function_exists('request')) {
     /**
      * Get an instance of the current request or an input item from the request.
      *
-     * @param array|string|null $key
-     * @param mixed             $default
-     *
      * @return \Illuminate\Http\Request|string|array
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    function request($key = null, $default = null)
+    function request()
     {
-        if (is_null($key)) {
-            return app('request');
-        }
-
-        if (is_array($key)) {
-            return app('request')->only($key);
-        }
-
-        $value = app('request')->__get($key);
-
-        return is_null($value) ? value($default) : $value;
+        app()->singletonIf('request', \Illuminate\Http\Request::capture());
+        return  app('request');
     }
 }
