@@ -41,7 +41,7 @@ class TcpSocket extends Tcp implements TcpInterface
                     'msg'  => 'Not Found Method',
                 ]));
             }
-            $data = app($class)->{$protocol['method']}(request()->merge($protocol['params']));
+            $data = app($class)->{$protocol['method']}(req()->merge($protocol['params']));
             if ($data instanceof JsonResource) {
                 $data = $data->response()->getData(true);
             }

@@ -20,14 +20,14 @@ if (! function_exists('app')) {
     }
 }
 
-if (! function_exists('request')) {
+if (! function_exists('req')) {
     /**
      * Get an instance of the current request or an input item from the request.
      *
      * @return \Illuminate\Http\Request|string|array
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
      */
-    function request()
+    function req()
     {
         app()->singletonIf('request', \Illuminate\Http\Request::capture());
         return  app('request');
