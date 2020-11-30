@@ -29,7 +29,9 @@ if (! function_exists('req')) {
      */
     function req()
     {
-        app()->singletonIf('request', \Illuminate\Http\Request::capture());
+        app()->singletonIf('request', function () {
+            return \Illuminate\Http\Request::capture();
+        });
         return  app('request');
     }
 }
