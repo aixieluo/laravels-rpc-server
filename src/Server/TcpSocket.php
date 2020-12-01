@@ -15,7 +15,7 @@ class TcpSocket extends Tcp implements TcpInterface
     public function onConnect(Server $server, $fd, $reactorId)
     {
         Log::info('New TCP connection', [$fd]);
-        $server->send($fd, 'Welcome to LaravelS.');
+//        $server->send($fd, 'Welcome to LaravelS.');
     }
 
     public function onClose(Server $server, $fd, $reactorId)
